@@ -1,16 +1,15 @@
-
+from data import INGREDIENT_PRICE, INGREDIENT_TYPE, INGREDIENT_NAME
 
 
 class TestIngredient:
 
 
-    def test_get_price_success(self):
-        pass
+    def test_get_price_success(self, ingredient):
+        assert ingredient.get_price() == INGREDIENT_PRICE
 
 
-    def test_get_name_success(self):
-        pass
+    def test_get_name_success(self, ingredient):
+        assert ingredient.get_name() == INGREDIENT_NAME
 
-
-    def test_get_type_success(self):
-        pass
+    def test_get_type_success(self, ingredient):
+        assert ingredient.get_type() == INGREDIENT_TYPE

@@ -1,2 +1,7 @@
 BUN_NAME = 'Белая булочка'
 BUN_PRICE = 40
+
+
+INGREDIENT_PRICE = 20
+INGREDIENT_NAME = 'Огурцы'
+INGREDIENT_TYPE = 'Овощи'
