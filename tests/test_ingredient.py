@@ -1,7 +1,4 @@
-import pytest
-
-from data import INGREDIENT_PRICE, INGREDIENT_TYPE, INGREDIENT_NAME, INGREDIENT_TYPE_1, INGREDIENT_TYPE_2
-from praktikum.ingredient import Ingredient
+from data import INGREDIENT_PRICE, INGREDIENT_TYPE, INGREDIENT_NAME
 
 
 class TestIngredient:
