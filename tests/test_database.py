@@ -1,5 +1,3 @@
-from praktikum.database import Database
-
 
 class TestDatabase:
 
