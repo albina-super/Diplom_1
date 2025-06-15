@@ -10,13 +10,14 @@ INGREDIENT_TYPE_1 = 'Мясо'
 INGREDIENT_TYPE_2 = ''
 
 
-# данные для булки рецепта бургера
-receipt_data_names = ['Чёрная булка', 'Хлеб', 'Сухарики']
-receipt_data_prices = [100, 10]
+RECEIPT = '''(==== Чёрная булка ====)
+= хлеб Сухарики =
+(==== Чёрная булка ====)
 
+Price: 210'''
 
-receipt_data_names_2 = ['Белая булка', 'Сулугуни', 'Сыры']
-receipt_data_prices_2 = [120, 20]
-
-receipt_data_names_3 = ['Ржаная булка', 'Салат', 'Зелень']
-receipt_data_prices_3 = [150, 30]
+BUN_NAME_FOR_RECEIPT = 'Чёрная булка'
+INGREDIENT_NAME_FOR_RECEIPT = 'Сухарики'
+INGREDIENT_TYPE_FOR_RECEIPT = 'Хлеб'
+INGREDIENT_PRICE_FOR_RECEIPT = 10
+BUN_PRICE_FOR_RECEIPT = 100

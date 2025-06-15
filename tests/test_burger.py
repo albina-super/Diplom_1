@@ -1,7 +1,7 @@
 import pytest
 
-from data import receipt_data_names, receipt_data_prices, receipt_data_names_2, receipt_data_prices_2, \
-    receipt_data_names_3, receipt_data_prices_3
+from data import RECEIPT, BUN_NAME_FOR_RECEIPT, BUN_PRICE_FOR_RECEIPT, \
+    INGREDIENT_NAME_FOR_RECEIPT, INGREDIENT_PRICE_FOR_RECEIPT, INGREDIENT_TYPE_FOR_RECEIPT
 
 
 class TestBurger:
@@ -28,24 +28,18 @@ class TestBurger:
         assert len(burger.ingredients) == initial_len - 1 and removed not in burger.ingredients
 
 
-    @pytest.mark.parametrize('names, prices, result', [
-        (receipt_data_names, receipt_data_prices, '== Чёрная булка =='),
-        (receipt_data_names_2, receipt_data_prices_2, '= сыры Сулугуни ='),
-        (receipt_data_names_3, receipt_data_prices_3, 'Price: 330')
-    ])
+    def test_get_receipt_success(self, burger, mock_bun, mock_ingredient):
 
-    def test_get_receipt_success(self, burger, mock_bun, mock_ingredient, result, names, prices):
-
-        mock_bun.get_name.return_value = names[0]
-        mock_bun.get_price.return_value = prices[0]
-        mock_ingredient.get_name.return_value = names[1]
-        mock_ingredient.get_price.return_value = prices[1]
-        mock_ingredient.get_type.return_value = names[2]
+        mock_bun.get_name.return_value = BUN_NAME_FOR_RECEIPT
+        mock_bun.get_price.return_value = BUN_PRICE_FOR_RECEIPT
+        mock_ingredient.get_name.return_value = INGREDIENT_NAME_FOR_RECEIPT
+        mock_ingredient.get_price.return_value = INGREDIENT_PRICE_FOR_RECEIPT
+        mock_ingredient.get_type.return_value = INGREDIENT_TYPE_FOR_RECEIPT
         burger.add_ingredient(mock_ingredient)
         burger.set_buns(mock_bun)
         receipt = burger.get_receipt()
 
-        assert result in receipt
+        assert receipt == RECEIPT
 
 
 
